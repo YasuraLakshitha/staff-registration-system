@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>members-page</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark p-3 sticky-top ">
+    <div class="container-fluid">
+      <button type="button" class="navbar-toggler" data-bs-collapse="collapse" data-bs-target="#navigation-bar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navigation-bar">
+        <ul class="navbar-nav ">
+          <li class="nav-item"><a href="../../../../inedx.html" class="nav-link fs-5 ">Register</a></li>
+          <li class="nav-item"><a href="#" class="nav-link fs-5 active">Members</a></li>
+          <li class="nav-item"><a href="aboutus.html" class="nav-link fs-5">About us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container  mt-5">
+    <div class="row">
+      <div class="row" data-aos="zoom-in">
+        <table class="table table-hover" id="staff-members">
+          <button id="btn-update"></button>
+        </table>
+      </div>
+    </div>
+
+    <div id="refresh-page"></div>
+
+    <button type="button" id="modal-button" class="btn btn-primary d-none" data-bs-toggle="modal"
+      data-bs-target="#exampleModal"></button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Update Form</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex mt-5">
+              <div>
+                <label for="first-name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first-name" required>
+              </div>
+              <div class="ms-5">
+                <label for="last-name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last-name" required>
+              </div>
+            </div>
+            <div class="w-75 mt-3 ">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="w-75 mt-3 ">
+              <label for="nic-number" contenteditable="false" class="form-label">NIC number</label>
+              <input type="text" class="form-control" id="nic-number" disabled>
+            </div>
+            <div class="w-75 mt-3 ">
+              <label for="address" class="form-label"> Address</label>
+              <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="d-flex mt-3 ">
+              <div>
+                <label for="date-of-birth" class="form-label">date of birth</label>
+                <input type="text" class="form-control" id="date-of-birth" required>
+              </div>
+              <div class="ms-5 ">
+                <label for="contact-number" class="form-label">contact Number</label>
+                <input type="tel" class="form-control" id="contact-number" required>
+              </div>
+            </div>
+            <div class="w-75 mt-3">
+              <label for="specialization-area" contenteditable="false" class="form-label">Select sepcialization
+                area</label>
+              <select name="selections" id="specialization-area" class="form-select "disabled>
+                <option selected id="selected-area"></option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-save">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary d-none" id="btn-warning" data-bs-toggle="modal"
+      data-bs-target="#modal-warning"></button>
+    <div class="modal fade " id="modal-warning" tabindex="-1" aria-labelledby="exampleModalWarningLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalWarningLabel">Warning!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to remove this member!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" id="btn-remove" class="btn btn-danger">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/staff.js"></script>
+</body>
+
+<script>
+  AOS.init({
+    duration: 1000
+  });
+</script>
+
+</html>

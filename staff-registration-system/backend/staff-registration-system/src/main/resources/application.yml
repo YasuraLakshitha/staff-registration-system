@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/Staff_management_System
+    password: 1234
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
